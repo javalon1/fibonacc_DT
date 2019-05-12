@@ -1,5 +1,7 @@
 package com.sda.algorytmy;
 
+import java.util.Scanner;
+
 /**
  * Hello world!
  */
@@ -13,8 +15,9 @@ public class App {
             System.out.println(tab[i]);
 
 
-            System.out.println(fibbo(5));
         }
+        System.out.println(fibbo(5));
+        System.out.println(fibonacci2(5));
     }
 
     public static int fibbo(int a) {
@@ -23,7 +26,28 @@ public class App {
         } else {
             return fibbo(a - 2) + fibbo(a - 1);
         }
+    }
 
+    public static int fibonacci2(int a) {
+        Scanner scanner = new Scanner(System.in);
+        int N = scanner.nextInt();
+        if (N < 2) {
+            return N;
+        } else {
+            int A = 0;
+            int B = 1;
+            int C = 1;
+            int K = 2;
+
+            for (K = 2; K < N; K++){
+
+            A = B;
+            B = C;
+            C = A + B;
+        }
+        return C;
     }
 }
+}
+
 
